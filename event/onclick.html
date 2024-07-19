@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>글자색 바뀌기</title>
+    <style>
+        .txtP{
+            color: cadetblue;
+        }
+        /* .txtColor{
+            color: darkblue;
+            background-color: cornflowerblue;
+            font-size: large;
+        } */
+    </style>
+  </head>
+  <body>
+    <button id="btnColor">글자색 바뀌기</button>
+    <p class="txtP">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi quisquam rerum voluptas cumque inventore facere eos porro! Doloribus, facilis eos. Quaerat est vero cumque fugit beatae officiis ut accusantium nulla.</p>
+    <script>
+        // function changeTxtColor(){
+        //     const txtColor = document.querySelector(".txtP")
+        //     txtColor.classList.toggle("txtColor")
+        //     // txtColor.style.color = "red"
+        // }
+        // 랜덤으로 글자색 바꾸기
+        const btnColor = document.querySelector("#btnColor");
+        btnColor.addEventListener("click", function () {
+            const txtColor = document.querySelector(".txtP");
+            const colors = ["red" , "blue" ,"green" , "pink" , "skyblue"]
+            // math.random() - 0과 1사이에서 무작위 소수를 반환한다.
+            // Math.florr() - 소수점 이하를 버리고 가장 가까운 정수로 내림합니다
+            const randomIntex = Math.floor(Math.random() * colors.length);
+            // console.log(colors);
+            // console.log(colors.length);
+            // console.log(Math.random() * colors.length);
+            const randomColor = colors[randomIntex];
+            // console.log(randomColor);
+            txtColor.style.color = randomColor
+        });
+</script>
+</body>
+</html>

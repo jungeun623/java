@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button id="btA">클릭하세요</button>
+    <h3 id="headingA"></h3>
+    <script>
+      const btA = document.querySelector("#btA");
+      const headingA = document.querySelector("#headingA");
+      //   버튼을 클릭했을때 기능
+      btA.onclick = function () {
+        const name = prompt("안녕하세요~");
+        alert(`${name} `);
+        headingA.textContent = `반갑습니다. ${name}`;
+      };
+    </script>
+  </body>
+</html>

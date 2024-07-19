@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>조건문예제</title>
+  </head>
+  <body>
+    <script>
+      // 1. 로그인 상태 확인
+      // 사용자가 로그인했는지 확인하고, 로그인 상태에 따라 다른 메시지를 출력하는 예제입니다.
+      let userLoggedIn = true;
+
+      if (userLoggedIn) {
+        console.log("다시 오신 것을 환영합니다, 사용자님!");
+      } else {
+        console.log("계속하려면 로그인해주세요.");
+      }
+      // 2. 장바구니에 아이템 추가
+      // 장바구니에 아이템을 추가할 때, 재고가 있는지 확인하는 예제입니다.
+      let itemInStock = 10;
+      let itemsRequested = 3;
+
+      if (itemsRequested <= itemInStock) {
+        console.log(`${itemsRequested}개의 아이템이 장바구니에 추가되었습니다.`);
+        itemInStock -= itemsRequested;
+      } else {
+        console.log("죄송합니다, 재고가 부족합니다.");
+      }
+      // 3. 할인 코드 적용
+      // 할인 코드를 입력받고, 올바른 코드인지 확인한 후, 할인을 적용하는 예제입니다.
+      let validDiscountCode = "SAVE10";
+      let enteredDiscountCode = "SAVE10";
+
+      if (enteredDiscountCode === validDiscountCode) {
+        console.log("할인 코드가 적용되었습니다. 10%를 절약했습니다!");
+      } else {
+        console.log("잘못된 할인 코드입니다.");
+      }
+      // 4. 회원 등급에 따른 혜택 제공
+      // 회원 등급에 따라 다른 혜택을 제공하는 예제입니다.
+      let userLevel = "gold";
+
+      if (userLevel === "gold") {
+        console.log("모든 상품에 대해 20% 할인이 적용됩니다.");
+      } else if (userLevel === "silver") {
+        console.log("모든 상품에 대해 10% 할인이 적용됩니다.");
+      } else {
+        console.log("할인을 받으려면 회원 프로그램에 가입하세요.");
+      }
+      // 5. 결제 가능 여부 확인
+      // 사용자의 결제 수단이 유효한지 확인하고 결제를 진행하는 예제입니다.
+      let paymentMethodValid = true;
+
+      if (paymentMethodValid) {
+        console.log("결제가 성공적으로 완료되었습니다. 구매해주셔서 감사합니다!");
+      } else {
+        console.log("결제 실패. 결제 정보를 확인해주세요.");
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>기초 웹사이트 예제</title>
+  </head>
+  <body>
+    <h1>학생 정보</h1>
+    <h2>이름 목록</h2>
+    <ul id="nameList">
+
+    </ul>
+
+    <h2>객체 데이터</h2>
+    <p id="studentName"></p>
+    <p id="studentAge"></p>
+
+    <script>
+    //   배열
+      let myNameArray = ["고선민", "정찬영", "김여정", "이승현","jdsflafj" ];
+      let myNumnerArray = [1, 2, 3, 4];
+
+      // 이름 목록을 HTML에 추가
+      let nameList = document.getElementById("nameList");
+      myNameArray.forEach((name) => {
+        let listItem = document.createElement("li");
+        listItem.textContent = name;
+        nameList.appendChild(listItem);
+      });
+
+      // 객체
+      let students = {
+        name: ["고선민", "정찬영", "김여정", "이승현"],
+        age: [10, 20, 30, 40],
+      };
+
+      // 객체 데이터를 HTML에 추가
+      let studentName = document.getElementById("studentName");
+      studentName.textContent = `세 번째 학생의 이름: ${students.name[2]}`;
+
+      let studentAge = document.getElementById("studentAge");
+      studentAge.textContent = `세 번째 학생의 나이: ${students.age[2]}`;
+    </script>
+  </body>
+</html>

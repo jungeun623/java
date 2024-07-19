@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>메뉴를 클릭했을때 서브메뉴 나오는 예제</title>
+    <style>
+      #submenu {
+        display: none;
+      }
+      #submenu.showSubmenu{
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 id="click">여기를 클릭</h1>
+    <div id="submenu">
+      <ul>
+        <li>서브메뉴1</li>
+        <li>서브메뉴2</li>
+        <li>서브메뉴3</li>
+      </ul>
+    </div>
+    <script>
+      // 1.변수에 h1을 담는다.
+      const clickH1 = document.getElementById("click")
+      // 2.submenu 변수에 담는다.
+      const submenu = document.getElementById("submenu")
+      // 3.h1을 클릭했을때 submenu의 클래스가 더해진다.
+      clickH1.onclick = function(){
+        submenu.classList.toggle("showSubmenu")
+      }
+    </script>
+  </body>
+</html>

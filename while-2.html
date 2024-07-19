@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>증가 감소</title>
+</head>
+<body>
+    <button id="increBT">증가 +</button>
+    <button id="decreBT">감소 -</button>
+    <div id="counter">0</div>
+    <script>
+        // 증가감소하는 기능
+        const increBT = document.getElementById("increBT")
+        const decreBT = document.getElementById("decreBT")
+        const countEl = document.getElementById("counter")
+        let count = 0
+        // 증가하는 코드
+        increBT.onclick = function(){
+            count++ 
+            // console.log(count);
+            countEl.innerHTML = count
+        }
+        // 감소하는 코드
+        
+
+    </script>
+</body>
+</html>

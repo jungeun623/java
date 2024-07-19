@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>continue문 건너뛰기</title>
+  </head>
+  <body>
+    <script>
+      let n = 10;
+      let sum = 0;
+      for (let i = 1; i <= n; i++) {
+        // 홀수라면 반복문을 건너뜀
+        if (i % 2 === 1) {
+          continue;
+          console.log(sum);
+        }
+        sum += i;
+        console.log(sum);
+        document.write(`${i}  ============ ${sum} <br>`);
+      }
+    </script>
+  </body>
+</html>

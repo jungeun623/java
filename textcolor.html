@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>글자색 바꾸기</title>
+    <style>
+        .red{
+            color: red;
+            background-color: aqua;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="heading">하경미</h1>
+    <p class="bgText">안녕하세요 바탕색을 바꿔주세요</p>
+    <p id="text">이름을 클릭해 보세요.</p>
+    <script>
+        //1. 이름을 담는다. 
+        let heading = document.querySelector("#heading")
+        // heading.addEventListener("click",function(){
+
+        // })
+        // heading.onclick = function(){
+        //     // heading.style.color = "red" 
+        //     if(heading.style.color === "red"){
+        //         heading.style.color = "#333"
+        //     }
+        //     else{
+        //         heading.style.color = "red" 
+        //     }
+        // }
+        // 바탕색을 토글 toggle()메서드
+        heading.onclick = function(){
+            heading.classList.toggle("red")
+        }
+
+    </script>
+</body>
+</html>

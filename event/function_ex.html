@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>함수 재사용하기</title>
+    <style>
+      .box {
+        width: 200px;
+        height: 200px;
+        background-color: red;
+        border: 2px solid black;
+        transition: all 0.3s;
+        margin: 5px;
+      }
+      .colorCh{
+        background-color: blueviolet;
+        border-radius: 50%;
+        border: 10px dotted #ff0000;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>함수 재사용하기</h1>
+    <div class="box box1"></div>
+    <div class="box box2"></div>
+    <div class="box box3"></div>
+    <div class="box box4"></div>
+    <script>
+        const box1 = document.querySelector(".box1")
+        const box2 = document.querySelector(".box2")
+        const box3 = document.querySelector(".box3")
+        const box4 = document.querySelector(".box4")
+        // 색이 바뀌는 기능을 함수 : colorChange()에 저장
+        function colorChange(){
+            this.classList.toggle("colorCh")
+        }
+    //    박스1에 클릭이벤트 적용
+        box1.addEventListener("click" , colorChange)
+        // 밗2에  마우스다운 이벤트 적용
+    </script>
+  </body>
+</html>

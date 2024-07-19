@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이벤트 공지</title>
+    <style>
+        #container{
+            width: 30%;
+        }
+        #container img{
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>이벤트 공지</h1>
+        <img src="/img/po.png" alt="이미지">
+        <ul>
+            <li><a href="#" class="detail-link" data-url="function_ex.html" target="_blank">자세히 보기</a></li>
+            <li><a href="#" class="detail-link" data-url="keyUp.html" target="_blank">자세히 보기</a></li>
+            <li><a href="#" class="detail-link" data-url="click.html" target="_blank">자세히 보기</a></li>
+            <li><a href="#" class="detail-link" data-url="mouseOut.html" target="_blank">자세히 보기</a></li>
+            <li><a href="#" class="detail-link" data-url="http://www.naver.com" target="_blank">자세히 보기</a></li>
+        </ul>
+        <!-- <p>
+            <a href="#" id="detail-link">자세히 보기</a>
+        </p> -->
+    </div>
+    <script>
+        const detailLink = document.querySelectorAll(".detail-link")
+        detailLink.forEach(function(link){
+            // console.log(link);
+            link.addEventListener("click", function(){
+                // loadURL(this.getAttribute("data-url"))
+                const urlData = this.getAttribute("data-url")
+                const target = this.getAttribute("target")
+                if(target === "_blank"){
+                    window.open(urlData , "_blank")
+                }else{
+                    alert("페이지가 없습니다");
+                }
+            })
+        })
+        // 링크 해당하는 주소로 이동하는 함수
+        function loadURL(url){
+            window.location = url; //부모창의 location에 url를 넘겨준다
+        }
+
+
+
+        // const detailLink = document.getElementById("detail-link")
+        // detaillink.addEventListener("click",function(){
+        //     loadURL("main_notice.html") //링크의 href를 사용한다.
+        // });
+        // // 링크 해당하는 주소로 이동하는 함수
+        // function loadURL(url){
+        //     window.location = url; //부모창의 location에 url를 넘겨준다
+        // }
+    </script>
+</body>
+</html>

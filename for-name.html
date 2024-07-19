@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>for문 예제</title>
+  </head>
+  <body>
+    <script>
+      let name = ["선미", "주연", "효인", "준영","관영" ," 정은" ,"진혁" ];
+      console.log(name);
+      let allName = "";
+      for(let i = 0 ; i < name.length ; i++){
+        // console.log(i);
+        allName += name[i]
+        if(i < name.length - 1 ){
+          // console.log(i);
+          allName += " , "
+        }
+      }
+      document.write(`학생 이름은 : ${allName} `)
+
+      // }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>탭버튼으로 바탕색 바꾸기</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            box-sizing: border-box;
+        }
+        a{
+            color: #333;
+            text-decoration: none;
+        }
+        ul{
+            width: 500px;
+            margin: 100px auto;
+            display: flex;
+            background-color: antiquewhite;
+            text-align: center;
+        }
+        ul li{
+            border: 1px solid #050505;
+            width: calc(100% / 3);
+        }
+        ul li:nth-child(2){
+            border-right: none;
+            border-left: none;
+        }
+        #result{
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            border: 3px solid #777777;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li><a href="#" id="green"> Green </a></li>
+        <li><a href="#" id="orange"> Orange </a></li>
+        <li><a href="#" id="purple"> Purple </a></li>
+    </ul>
+    <div id="result"></div>
+    <script>
+        const green = document.querySelector("#green")
+        const orange = document.querySelector("#orange")
+        const purple = document.querySelector("#purple")
+        // 그린을 클릭 했을때 바탕이 color("green")메서드 받아서 색이 변경
+        green.addEventListener("click",function (){
+            changeBg("green")
+        });
+        // 오렌지을 클릭 했을때 바탕이 color("orange")메서드 받아서 색이 변경
+        orange.addEventListener("click", function(){
+            changeBg("orange")
+        });
+        // 퍼플을 클릭 했을때 바탕이 color("purple")메서드 받아서 색이 변경
+        purple.addEventListener("click", function(){
+            changeBg("purple")
+        });
+        // 바탕색을 바꾸는 함수기능
+        function changeBg(color){
+            const bg = document.getElementById("result")
+
+            // bg.style.backgroundColor = "green";
+            // bg.style.backgroundColor = "orange";
+            // bg.style.backgroundColor = "purple";
+            bg.style.backgroundColor = color;
+        }
+    </script>
+</body>
+</html>
