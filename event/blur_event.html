@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>blur이벤트</title>
+    <style>
+      #nameError {
+        color: red;
+        font-size: 13px;
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>blur이벤트</h1>
+    <label for="input">이름:</label>
+    <input type="text" id="input" placeholder="이름을 입력하세요" />
+    <span id="nameError"></span>
+    <script>
+      //   const input = document.querySelector("#input");
+      //   input.addEventListener("blur", function () {
+      //     alert("포커스가 빠져나갔습니다.");
+
+      //   });
+      const input = document.querySelector("#input");
+      const nameError = document.querySelector("#nameError");
+      input.addEventListener("blur", function () {
+        const inputValue = input.value.trim(); 
+        // trim 을 필수로 해야함!
+        if (inputValue === "") {
+          nameError.textContent = "이름을 입력해주세요";
+          nameError.style.display = "inline";
+        } else {
+          nameError.style.display = "none";
+        }
+      });
+    </script>
+  </body>
+</html>

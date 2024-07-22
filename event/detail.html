@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>상세보기</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        list-style: none;
+      }
+      #item {
+        position: relative;
+        width: 500px;
+        margin: 100px auto;
+        padding: 15px 20px;
+      }
+      button {
+        background-color: rgba(255, 255, 255, 0.7);
+        padding: 5px;
+        border: 1px solid #ccc;
+        font-size: 0.8em;
+      }
+      .over {
+        position: absolute;
+        right: 100px;
+        top: 270px;
+      }
+      .detail {
+        width: 400px;
+        text-align: left;
+        line-height: 1.8;
+        display: none;
+      }
+      .detail *{
+        margin: 20px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="item">
+      <img src="../img/flower.jpg" alt="꽃" />
+      <button class="over" id="open">상세설명보기</button>
+      <!-- 상세정보 -->
+      <div id="desc" class="detail">
+        <h4>등심붓꽃</h4>
+        <p>북아메리카 원산으로 각지에서 관상초로 흔히 심고 있는 귀화식물이다. 길가나 잔디밭에서 흔히 볼 수 있다. 아주 작은 씨앗을 무수히 많이 가지고 있는데 바람을 이용해 씨앗들을 날려보내거나, 뿌리줄기를 통해 동일한 개체들을 많이 만들어 냄으로써 번식한다.</p>
+        <button id="close">상세설명 닫기</button>
+      </div>
+    </div>
+  </body>
+  <script>
+    // 보기버튼 변수에 담기
+    const open = document.querySelector("#open");
+    // 닫기버튼 변수에 담기
+    const close = document.querySelector("#close")
+    // 상세보기영역 변수에 담기
+    const desc = document.querySelector("#desc")
+    // open을 클릭했을때 desc의 스타일의 디스플레이가 블락
+    // open.onclick = function(){
+    //     desc.style.display = "block";
+    // };
+    open.addEventListener("click",function(){
+        desc.style.display = "block";
+        open.style.display = "none"
+    })
+    close.addEventListener("click",function(){
+        desc.style.display = "none";
+        open.style.display = "block";
+    })
+  </script>
+</html>
