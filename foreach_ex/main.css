@@ -1,0 +1,26 @@
+@charset "utf-8";
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  box-sizing: border-box;
+}
+.menu {
+  width: 600px;
+  display: flex;
+  background-color: antiquewhite;
+  line-height: 2;
+}
+.menu-item {
+  position: relative;
+  width: calc(100% / 5);
+}
+.submenu {
+  display: none;
+  position: absolute;
+  top: 40px;
+  background-color: chartreuse;
+}
+.menu-item.active .submenu{
+    display: block;
+}

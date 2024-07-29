@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>window 객체</title>
+  </head>
+  <body>
+    <button onclick="startTimeOut()">타임아웃 시작</button>
+    <button onclick="startInterval()">인터벌 시작</button>
+    <button onclick="stopInterval()">인터벌 중지</button>
+    <p id="time">
+      <!-- js출력 -->
+    </p>
+    <script>
+      function startTimeOut() {
+        window.setTimeout(function () {
+          document.getElementById("time").innerHTML = new Date().toLocaleTimeString();
+        }, 1000);
+      }
+      let intervalId;
+      function startInterval() {
+        intervalId = window.setInterval(function () {
+          document.getElementById("time").innerHTML = new Date().toLocaleTimeString();
+        }, 1000);
+      }
+      function stopInterval(){
+        if(intervalId){
+            window.clearInterval(intervalId)
+        }
+      }
+    </script>
+  </body>
+</html>
