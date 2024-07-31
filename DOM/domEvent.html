@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dom에 직접 함수설정</title>
+</head>
+<style>
+    #flower{
+        width: 300px;
+        object-fit: cover;
+    }
+</style>
+<body>
+    <img src="../img/flower.jpg" alt="꽃" id="flower">
+    <script>
+        // 이미지 클릭하면 담아놓은 이미지로 바뀜
+        // const flower = document.querySelector("#flower")
+        // flower.onclick = function(){
+        //     // alert("이미지")
+        //     const newImg = "../img/game_1.jpg"
+        //     flower.src = newImg
+        // };
+        //=============================================
+        const flower = document.querySelector("#flower")
+        const orignalSrc = flower.getAttribute("src")
+        const newSrc = "../img/game_1.jpg"
+        flower.onclick = function(){
+            if(flower.getAttribute("src") === orignalSrc){
+                flower.setAttribute("src" , newSrc);
+            }else{
+                flower.setAttribute("src" , orignalSrc);
+            }
+        }
+    </script>
+</body>
+</html>
