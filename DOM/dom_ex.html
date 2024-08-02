@@ -37,23 +37,35 @@
       // 6. this 에 style에 color는 ""
       // 7
       // })
-      const check = document.querySelectorAll("ul li");
-      check.forEach(function (item){
-        // console.log(item);
-        item.addEventListener("click", function(){
-            // console.log(this);
-            // this.style.color = "red"
-            // this.style.textDecoration = "line-through"
-            if(this.style.color === "red"){
-                this.style.color === "";
-                this.style.textDecoration == "";
-            }
-            else{
-                this.style.color === "#999";
-                this.style.textDecoration == "line-through";
-            }
-        })
-      })
+      // const check = document.querySelectorAll("ul li");
+      // check.forEach(function (item){
+      //   // console.log(item);
+      //   item.addEventListener("click", function(){
+      //       // console.log(this);
+      //       // this.style.color = "red"
+      //       // this.style.textDecoration = "line-through"
+      //       if(this.style.color === "red"){
+      //           this.style.color === "";
+      //           this.style.textDecoration == "";
+      //       }
+      //       else{
+      //           this.style.color === "#999";
+      //           this.style.textDecoration == "line-through";
+      //       }
+      //   })
+      // })
+      const checks = document.querySelectorAll("li");
+      checks.forEach(function (check) {
+        check.addEventListener("click", function () {
+          if (this.style.textDecoration == "line-through" && this.style.color == "red") {
+            this.style.textDecoration = "none";
+            this.style.color = "#333";
+          } else {
+            this.style.textDecoration = "line-through";
+            this.style.color = "red";
+          }
+        });
+      });
     </script>
   </body>
 </html>
