@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dom 연습</title>
+    <style>
+      ul {
+        list-style: none;
+      }
+      li {
+        font-size: 20px;
+        line-height: 35px;
+      }
+      .check {
+        color: #999;
+        font-size: 20px;
+        margin-right: 25px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>할 일 목록</h1>
+    <ul>
+      <li><span class="check">&check;</span>할 일 1</li>
+      <li><span class="check">&check;</span>할 일 2</li>
+      <li><span class="check">&check;</span>할 일 3</li>
+      <li><span class="check">&check;</span>할 일 4</li>
+      <li><span class="check">&check;</span>할 일 5</li>
+    </ul>
+    <script>
+      // 1.여러개인 클래스 ul li 를 변수에 담는다
+      // 2. ul li에 foreach(function(매개변수){})
+      // 3. 콘솔에 매개변수 확인
+      // 4. 매개변수에 addEventListener("이벤트 명", function(){
+      // 5. 클릭했을때 해당하는 요소 - this
+      // 6. this 에 style에 color는 ""
+      // 7
+      // })
+      const check = document.querySelectorAll("ul li");
+      check.forEach(function (item){
+        // console.log(item);
+        item.addEventListener("click", function(){
+            // console.log(this);
+            // this.style.color = "red"
+            // this.style.textDecoration = "line-through"
+            if(this.style.color === "red"){
+                this.style.color === "";
+                this.style.textDecoration == "";
+            }
+            else{
+                this.style.color === "#999";
+                this.style.textDecoration == "line-through";
+            }
+        })
+      })
+    </script>
+  </body>
+</html>

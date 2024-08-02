@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dom event 객체</title>
+    <style></style>
+  </head>
+  <body>
+    <div id="container">
+      <img src="image/esay1.jpg" alt="cup" id="cover" />
+    </div>
+    <script>
+      const cover = document.querySelector("#cover");
+    //   cover.addEventListener("mouseover", changePic, false);
+    //   cover.addEventListener("mouseout", originPic, false);
+    //   // 이미지 변경되는 함수
+    //   function changePic() {
+    //     cover.src = `image/esay2.jpg`;
+    //   }
+    //   // 원래 이미지 함수
+    //   function originPic() {
+    //     cover.src = `image/esay1.jpg`;
+    //   }
+
+    // 위, 아래 같은 코드
+
+    cover.addEventListener("mouseover", function(){
+        cover.src = "image/esay2.jpg"
+    })
+    cover.addEventListener("mouseout", function(){
+        cover.src = "image/esay1.jpg"
+    })
+    
+    </script>
+  </body>
+</html>
