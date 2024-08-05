@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    #container {
+      width: 500px;
+      margin: 10px auto;
+      padding: 20px;
+    }
+    #info {
+      margin-top: 20px;
+    }
+  </style>
+  <body>
+    <div id="container">
+      <h1>Dom 을 공부 합시다</h1>
+      <a href="#" id="addmore">더 보기</a>
+      <div id="info">
+        <!-- js 출력 -->
+         <!-- <p>p태그 생성</p> -->
+         <!-- <img src="image/cup.png" alt="컵"> -->
+      </div>
+    </div>
+    <script>
+      const addmoreLink = document.querySelector("#addmore");
+      addmoreLink.addEventListener("click", function (e) {
+        e.preventDefault();
+        addP()
+        addmoreLink.removeEventListener("click", arguments.callee); // 이벤트 리스트너 제거
+      });
+
+      // info에 추가되는 함수
+      function addP() {
+        // 새로운 p 만들기
+        const newP = document.createElement("p");
+        const info = document.querySelector("#info");
+        const txtPNode = document.createTextNode("p태그 생성");
+        newP.appendChild(txtPNode);
+        info.appendChild(newP);
+        // 이미지 태그 만들기
+        const newImg = document.createElement("img")
+        const srcNode = document.createAttribute("src")
+        const altNode = document.createAttribute("alt")
+        srcNode.value = "image/cup.png"
+        // console.log(srcNode)
+        altNode.value = "컵"
+        newImg.setAttributeNodeNS(srcNode , altNode)
+        // console.log(newImg);
+        info.appendChild(newImg)
+      }
+    </script>
+  </body>
+</html>
