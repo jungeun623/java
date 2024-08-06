@@ -13,7 +13,7 @@
       #info {
         margin-top: 20px;
       }
-      .newP{
+      .newP {
         font-size: 30px;
         color: darkblue;
         background-color: blueviolet;
@@ -45,10 +45,9 @@
         const info = document.querySelector("#info");
         const txtPNode = document.createTextNode("p태그 생성");
         newP.appendChild(txtPNode);
-        newP.setAttribute("class" , "newP")
+        newP.setAttribute("class", "newP");
         info.appendChild(newP);
 
-        
         // 이미지 태그 만들기
         const newImg = document.createElement("img");
         newImg.setAttribute("src", "image/cup.png");

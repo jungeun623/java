@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>요소 추가</title>
+  </head>
+  <body>
+    <ul id="list">
+      <li>Item 1</li>
+      <li>Item 2</li>
+      <li>Item 3</li>
+    </ul>
+    <!-- 이미지 js 출력 -->
+    <!-- <img src="image/cup.png" alt="레드컵"> -->
+    <button id="addItemBtn">Add Item</button>
+  </body>
+  <script>
+    const addBtn = document.querySelector("#addItemBtn");
+    const list = document.querySelector("#list");
+    const newH = document.querySelector("#name");
+    // addBtn.addEventListener("click", function(){})
+    addBtn.addEventListener("click", () => {
+      // 새로운 요소를 만든다. createElement(`요소명`)
+      const newItem = document.createElement("li");
+      // 요소에 들어갈 글자를 만든다
+      newItem.textContent = `Item 4`;
+      // 부모에 자식을 연결한다.
+      newItem.setAttribute("class", "item4");
+      list.appendChild(newItem);
+      // ========== 실습
+      addBtn.addEventListener("click", () => {
+        // list안에 h1 으로 본인 이름 추가
+        // id는 name 으로 해서 속성도 추가하기
+        const newH = document.createElement("h1");
+        newH.textContent = `이정은`;
+        newH.setAttribute("id", "name");
+        list.appendChild(newH);
+        // 이미지 태그 만들기
+        const newImg = document.createElement("img");
+        newImg.setAttribute("src", "image/cup.png");
+        newImg.setAttribute("alt", "레드컵");
+        newImg.setAttribute("id", "redcup");
+        console.log(newImg)
+        list.appendChild(newImg)
+      });
+    });
+  </script>
+</html>
