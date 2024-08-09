@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM event객체</title>
+    <style>
+        #container{
+            width: 300px;
+            margin: 100px auto;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <img src="image/cup-1.png" alt="cup" id="cup">
+        <p class="display"></p>
+    </div>
+    <script>
+        const cup = document.querySelector("#cup")
+        cup.onclick = function(){
+            const display = document.querySelector(".display")
+            display.innerHTML = `
+            이미지의 src : ${this.src} <br>
+            이미지의 alt :   ${this.alt} <br>
+            이미지의 id :   ${this.id} <br>
+            
+            
+            `
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>메서드 가져오기</title>
+  </head>
+  <body>
+    <a href="http://www.naver.com">네이버</a>
+    <script>
+      const aEl = document.querySelector("a");
+      const href = aEl.getAttribute("href");
+      //   console.log(href);
+      aEl.setAttribute("href", "http://www.google.com");
+      // console.log(aEl);
+      aEl.innerHTML = "구글";
+      aEl.setAttribute("target", "_blank");
+      console.log(aEl);
+      //   클래스 명 추가
+      aEl.setAttribute("class" , "aElement")
+      // 아이디 명 추가
+      aEl.setAttribute("id" , "aElement")
+    </script>
+  </body>
+</html>

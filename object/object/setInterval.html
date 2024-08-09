@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="number">0</div>
+    <script>
+        let count = 0 
+        // 숫자를 1초마다 증가시키는 함수
+        function countNum(){
+            count++ //숫자를 1 증가시킨다.
+            // console.log(count);
+            // count++ //숫자를 1 증가시킨다.
+            // console.log(count);
+            document.querySelector("#number").innerHTML = count
+        }
+        
+        setInterval(countNum , 1000)
+    </script>
+</body>
+</html>

@@ -26,8 +26,7 @@
       const input = document.querySelector("#input");
       const nameError = document.querySelector("#nameError");
       input.addEventListener("blur", function () {
-        const inputValue = input.value.trim(); 
-        // trim 을 필수로 해야함!
+        const inputValue = input.value.trim();
         if (inputValue === "") {
           nameError.textContent = "이름을 입력해주세요";
           nameError.style.display = "inline";

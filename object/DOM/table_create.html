@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>table 만들기</title>
+    <style>
+      form {
+        margin-bottom: 30px;
+      }
+      input[type="text"] {
+        width: 30px;
+        height: 20px;
+        text-align: center;
+      }
+      button {
+        margin-left: 30px;
+      }
+      table {
+        width: 300px;
+        border-collapse: collapse;
+      }
+      table,
+      td {
+        border: 1px solid #ccc;
+      }
+      td {
+        padding: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <form id="tableForm">
+      <input type="text" id="rCount" value="1" />행 <input type="text" id="cCount" value="1" />열
+      <button type="submit">작성</button>
+    </form>
+    <div id="contents">
+      <!-- js출력 -->
+    </div>
+    <script>
+      const form = document.querySelector("#tableForm");
+      // 추가를 클릭했을때 함수
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        creatTable();
+      });
+      // 테이블 생성 함수
+      function creatTable() {
+        // 행과 열을 가져옴
+        const rCount = document.querySelector("#rCount").value;
+        // console.log(rCount);
+        const cCount = document.querySelector("#cCount").value;
+
+        // console.log(cCount);
+        // 새로운 테이블 요소 생성
+        const newTable = document.createElement("table");
+        // console.log(newTable);
+        Array.from({ length: rCount }).forEach(function (_, i) {
+          //   console.log(i);
+          // 새로운 행(tr)요소를 생성합니다.
+          const newRow = document.createElement("tr");
+          Array.from({ length: cCount }).forEach(function (_, j) {
+            // console.log(j);
+            // 새로운 셀(td) 요소를 생성하고 텍스트 노트를 추가
+            const newCell = document.createElement("td");
+            const cellText = document.createTextNode(`${i + 1} , ${j + 1}`);
+            // console.log(cellText);
+            newCell.appendChild(cellText);
+            newRow.appendChild(newCell);
+            // console.log(newRow);
+          });
+
+          newTable.appendChild(newRow);
+        });
+        // contents요소에 newTable를 연결
+        const contens = document.querySelector("#contents");
+        contens.innerHTML = "";
+        contens.appendChild(newTable);
+        document.querySelector("#rCount").value = "1";
+        document.querySelector("#cCount").value = "1";
+      }
+    </script>
+  </body>
+</html>

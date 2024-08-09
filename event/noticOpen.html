@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>이벤트 공지</title>
+    <style>
+      #container {
+        width: 30%;
+      }
+      #container img {
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <h1>이벤트 공지</h1>
+      <img src="../images/paint2.jpg" alt="이미지" />
+      <ul>
+        <li><a href="#" class="detail-link" data-url="function_ex.html" target="_blank">자세히 보기 1</a></li>
+        <li><a href="#" class="detail-link" data-url="keyUp.html" target="_blank">자세히 보기 2</a></li>
+        <li><a href="#" class="detail-link" data-url="mouseDown.html" target="_blank">자세히 보기 3</a></li>
+        <li><a href="#" class="detail-link" data-url="onclick.html" target="_blank">자세히 보기 4</a></li>
+        <li><a href="#" class="detail-link" data-url="https://www.naver.com/" target="_blank">네이버</a></li>
+      </ul>
+    </div>
+    <script>
+      const detailLink = document.querySelectorAll(".detail-link");
+      detailLink.forEach(function (link) {
+        // console.log(link);
+        link.addEventListener("click", function (e) {
+            e.preventDefault()
+          //   loadURL(this.getAttribute("data-url"));
+          const urlData = this.getAttribute("data-url");
+          const target = this.getAttribute("target");
+          if (target === "_blank") {
+            window.open(urlData, "_blank");
+          }
+        });
+      });
+ 
+    </script>
+  </body>
+</html>

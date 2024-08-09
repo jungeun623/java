@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="container">
+      <h1>Web Programming</h1>
+      <!-- p태그 -->
+    </div>
+    <!-- 새로운 영역 -->
+    <div class="notice">
+      <!-- js출력 -->
+      <!-- <span> 안녕하세요 </span> -->
+    </div>
+    <script>
+      const newp = document.createElement("p");
+
+      const txtNode = document.createTextNode("Dom document object model의 준말입니다.");
+      //   console.log(txtNode);
+      newp.appendChild(txtNode);
+      console.log(newp);
+      document.querySelector("#container").appendChild(newp);
+      //   h2 태그에 본인 이름 출력
+      // 1.h2 만들기
+      const h2 = document.createElement("h2");
+      // 2.본인이름 만들기
+      const name = document.createTextNode("하경미");
+      // 3.h2에 본인이름 연결
+      h2.appendChild(name);
+      console.log(h2);
+
+      // 4.h2를 container 에 연결
+      const container = document.querySelector("#container");
+      container.appendChild(h2);
+      const noticeE = document.querySelector(".notice");
+      const spanE = document.createElement("span");
+      const hi = document.createTextNode('안녕하세요')
+      spanE.appendChild(hi)
+      noticeE.appendChild(spanE)
+
+    </script>
+  </body>
+</html>

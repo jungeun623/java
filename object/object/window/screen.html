@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>window객체</title>
+  </head>
+  <body>
+    <button onclick="showWin()">창크기 보기</button>
+    <p id="size">
+      <!-- js출력 -->
+    </p>
+    <script>
+      function showWin() {
+        const width = window.innerWidth;
+        const height = window.innerHeight;
+        document.getElementById("size").innerHTML = `
+        너비: ${width} , 높이 : ${height}
+        `;
+      }
+      //   창크기 변경시 자동 업데이트
+      window.onresize = showWin;
+    </script>
+  </body>
+</html>

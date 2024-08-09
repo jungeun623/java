@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dom Ex</title>
+    <style>
+      ul {
+        list-style: none;
+      }
+      li {
+        font-size: 20px;
+        line-height: 35px;
+      }
+      .check {
+        color: #999;
+        font-size: 20px;
+        margin-right: 25px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>할 일 목록</h1>
+    <ul>
+      <li><span class="check">&check;</span>할 일 1</li>
+      <li><span class="check">&check;</span>할 일 2</li>
+      <li><span class="check">&check;</span>할 일 3</li>
+      <li><span class="check">&check;</span>할 일 4</li>
+      <li><span class="check">&check;</span>할 일 5</li>
+    </ul>
+    <script>
+      // 모든 <ul>의 <li> 요소를 선택
+var checks = document.querySelectorAll("ul li");
+
+// 각 <li> 요소에 대해 클릭 이벤트 리스너를 추가
+checks.forEach(function(item) {
+  item.addEventListener("click", function() {
+    // 현재 스타일을 체크하여 토글 기능을 구현
+    if (this.classList.contains("completed")) {
+      // 'completed' 클래스를 제거하여 원래 스타일로 되돌리기
+      this.classList.remove("completed");
+    } else {
+      // 'completed' 클래스를 추가하여 스타일 적용
+      this.classList.add("completed");
+    }
+  });
+});
+
+    </script>
+  </body>
+</html>

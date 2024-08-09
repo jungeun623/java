@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>테이블 예제</title>
+    <style>
+      table {
+        width: 50%;
+        /* 셀 경계 병합 */
+        border-collapse: collapse;
+      }
+      th,
+      td {
+        border: 1px solid #ddd;
+      }
+      th {
+        background-color: #4caf50;
+        color: white;
+      }
+      tr:nth-child(even){
+        background-color: #f2f2f2;
+      }
+      tr:hover{
+        background-color: #ddd;
+      }
+    </style>
+  </head>
+  <body>
+    <table>
+      <tr>
+        <th>헤더 1</th>
+        <th>헤더 2</th>
+        <th>헤더 3</th>
+      </tr>
+      <tr>
+        <td>데이터 1</td>
+        <td>데이터 2</td>
+        <td>데이터 3</td>
+      </tr>
+      <tr>
+        <td>데이터 1</td>
+        <td>데이터 2</td>
+        <td>데이터 3</td>
+      </tr>
+      <tr>
+        <td>데이터 1</td>
+        <td>데이터 2</td>
+        <td>데이터 3</td>
+      </tr>
+    </table>
+  </body>
+</html>

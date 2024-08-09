@@ -34,15 +34,15 @@
         line-height: 1.8;
         display: none;
       }
-      .detail *{
+      .detail * {
         margin: 20px 0;
       }
     </style>
   </head>
   <body>
     <div id="item">
-      <img src="../img/flower.jpg" alt="꽃" />
-      <button class="over" id="open">상세설명보기</button>
+      <img src="../images/flower.jpg" alt="꽃이미지" />
+      <button class="over" id="open">상세설명 보기</button>
       <!-- 상세정보 -->
       <div id="desc" class="detail">
         <h4>등심붓꽃</h4>
@@ -50,25 +50,22 @@
         <button id="close">상세설명 닫기</button>
       </div>
     </div>
-  </body>
-  <script>
-    // 보기버튼 변수에 담기
-    const open = document.querySelector("#open");
-    // 닫기버튼 변수에 담기
-    const close = document.querySelector("#close")
-    // 상세보기영역 변수에 담기
-    const desc = document.querySelector("#desc")
-    // open을 클릭했을때 desc의 스타일의 디스플레이가 블락
-    // open.onclick = function(){
-    //     desc.style.display = "block";
-    // };
-    open.addEventListener("click",function(){
+    <script>
+      // 보기버튼 변수에 담기
+      const open = document.querySelector("#open");
+      // 닫기버튼 변수에 담기
+      const close = document.querySelector("#close");
+      // 상세보기영역 변수에 담기
+      const desc = document.querySelector("#desc");
+      // open을 클릭했을때 desc의 스타일의 디스플레이가 블락
+      //   open.onclick = function () {
+      //     desc.style.display = "block";
+      //   };
+     open.addEventListener("click",function(){
         desc.style.display = "block";
-        open.style.display = "none"
-    })
-    close.addEventListener("click",function(){
-        desc.style.display = "none";
-        open.style.display = "block";
-    })
-  </script>
+        open.style.display ="none"
+     })
+      
+    </script>
+  </body>
 </html>

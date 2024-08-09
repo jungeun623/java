@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let nums = ["one", "two", "three", "four"];
+        // console.log(nums[0]);
+        let nums1 = Array("one", "two", "three", "four", "five")
+        console.log(nums1);
+        // for(let i = 0 ; i < nums1.length ; i++){
+        //     document.write(`<p>${nums1[i]}</p> `)
+        //     // console.log(i);
+        // }
+        nums1.forEach(function(item){
+            console.log(item);
+            document.write(`${item},`)
+        })
+    </script>
+</body>
+</html>

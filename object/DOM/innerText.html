@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>innerText , innerHTML 프로퍼티</title>
+  </head>
+  <body>
+    <button onclick="iT()">innerText로 표시하기</button>
+    <button onclick="iH()">innerHtml로 표시하기</button>
+    <h1>현재시각:</h1>
+    <div id="current">
+      <!-- js출력 -->
+    </div>
+    <script>
+      let now = new Date();
+      const current = document.querySelector("#current");
+      // innerText로 표시하기
+      function iT() {
+        current.textContent = `<span>${now}</span>`;
+      }
+      // innerHtml로 표시하기
+      function iH() {
+        current.innerHTML = `<span>${now.toLocaleTimeString()}</span> <br>
+        <span>${now.toLocaleDateString()}</span>
+        `;
+      }
+    </script>
+  </body>
+</html>

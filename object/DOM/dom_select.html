@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>dom요소 선택</title>
+  </head>
+  <body>
+    <h1 id="title">안녕 하세요!!!</h1>
+    <p class="description">여기는 p태그입니다.</p>
+    <button id="changeTextBtn">클릭하면 글자 변경</button>
+    <script>
+      // 요소선택
+      const title = document.getElementById("title");
+      const description = document.querySelector(".description");
+
+      const button = document.getElementById("changeTextBtn");
+    //   텍스트 변경
+    // 1.버튼을 클릭한다.
+    button.addEventListener("click" , function(){
+        // 1.title에 innerHTML 는 "바뀌는 내용 (태그까지 변경 가능하다)"
+        title.innerHTML= `<h4 class="title">반갑습니다~~~~</h4>`
+        // console.log(title);
+        // 2.description에 textContent 는 ` 하경미 `
+        description.textContent = `방가방가`
+        
+    })
+    </script>
+  </body>
+</html>

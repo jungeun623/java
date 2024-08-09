@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #container {
+        width: 500px;
+        margin: 10px auto;
+        padding: 20px;
+      }
+      #info {
+        margin-top: 20px;
+      }
+      .newP{
+        color: blueviolet;
+        font-size: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <h1>Dom 을 공부 합시다</h1>
+      <a href="#" id="addMore">더 보기</a>
+      <div id="info">
+        <!-- js출력 -->
+        <!-- <p>p태그 생성</p> -->
+        <!-- <img src="image/cup-1.png" alt="레드컵"> -->
+      </div>
+    </div>
+    <script>
+      const addMoreLink = document.querySelector("#addMore");
+      addMoreLink.addEventListener("click", function (e) {
+        e.preventDefault();
+        addP();
+        addMoreLink.removeEventListener("click", arguments.callee); // 이벤드 리스너 제거
+      });
+      //  info에 추가되는 함수
+      function addP() {
+        // 새로온 p만들기
+        const newP = document.createElement("p");
+        const info = document.querySelector("#info");
+        const txtPNode = document.createTextNode("p태그 생성");
+        newP.appendChild(txtPNode);
+        newP.setAttribute("class", "newP");
+        info.appendChild(newP);
+        // 이미지 태그 만들기
+        const newImg = document.createElement("img");
+        newImg.setAttribute("src", "image/cup-1.png");
+        newImg.setAttribute("alt", "레드컵");
+        info.appendChild(newImg);
+      }
+    </script>
+  </body>
+</html>

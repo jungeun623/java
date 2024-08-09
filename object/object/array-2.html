@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Array 메서드</title>
+  </head>
+  <body>
+    <script>
+      //  splice()
+      // 인수가 1개일때
+      let numbers = [1, 2, 3, 4, 5];
+      let newNumbers = numbers.splice(3);
+      // console.log(newNumbers);
+      // console.log(numbers);
+      // // 인수가 2개일때
+      let study = ["html", "css", "web", "jquery"];
+      // let newStudy =study.splice(2,2)
+      // console.log(study);
+      // 인수가 3개일때
+      let newStudy = study.splice(1, 2, "js");
+      // console.log(study);
+      colors = ["red", "green", "blue", "white", "black"];
+      let colors2 = colors.splice(2);
+      console.log(colors);
+      console.log(colors2);
+    </script>
+  </body>
+</html>

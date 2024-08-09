@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>항목 선택</h2>
+    <label><input type="checkbox" class="item" value="항목 1" /> 항목 1</label><br />
+    <label><input type="checkbox" class="item" value="항목 2" /> 항목 2</label><br />
+    <label><input type="checkbox" class="item" value="항목 3" /> 항목 3</label><br />
+    <label><input type="checkbox" class="item" value="항목 4" /> 항목 4</label><br />
+    <label><input type="checkbox" class="item" value="항목 5" /> 항목 5</label><br />
+
+    <h3>선택된 항목:</h3>
+    <p id="selectedItems">
+      <!-- js출력 -->
+    </p>
+    <script>
+      const checkboxs = document.querySelectorAll(".item");
+      const items = document.querySelector("#selectedItems");
+      //   체크된 값을 담는 함수
+      function selectedItems() {
+        let checkItems = [];
+        checkboxs.forEach(function (item) {
+          // console.log(item);
+          if (item.checked) {
+            checkItems.push(item.value);
+          }
+          if (checkItems.length > 0) {
+            items.textContent = checkItems.join(`,`);
+          } else {
+            items.textContent = `선택된 항목이 없습니다.`;
+          }
+        });
+      }
+      checkboxs.forEach(function (item) {
+        item.addEventListener("change", selectedItems);
+      });
+      selectedItems();
+    </script>
+  </body>
+</html>

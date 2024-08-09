@@ -1,50 +1,42 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>submit 이벤트</title>
-</head>
-<body>
+  </head>
+  <body>
     <h1>submit 이벤트</h1>
     <div class="form-wrap">
-        <form id="myForm">
-            <label for="name">이름:</label>
-            <input type="text" id="name">
-            <br>
-            <label for="email">이메일:</label>
-            <input type="text" id="email">
-            <br>
-            <button type="submit">폼 제출하기</button>
-        </form>
-        <div id="output">
-            <!-- js로 출력 -->
-             
-        </div>
+      <form id="myForm">
+        <label for="name">이름:</label>
+        <input id="name" type="text" />
+        <br />
+        <label for="email">이메일:</label>
+        <input id="email" type="text" />
+        <br />
+        <button type="submit">폼 제출하기</button>
+      </form>
+      <div id="output">
+        <!-- js로 출력 -->
+      </div>
     </div>
     <script>
-        const form1 = document.querySelector("#myForm");
-        const output = document.querySelector("#output");
-        // 폼 제출하기 기능
-        form1.addEventListener("submit",function(event){
-            event.preventDefault(); //기본 제출 동작을 막음
-            const nameE = document.querySelector("#name").value
-            // const nameE =document.querySelector("#name")
-            // const nameValue =nameE.value
-            console.log(nameE);
-            const emailE =document.querySelector("#email").value
-            // const emailE =document.querySelector("#email")
-            // const emailValue = emailE.value
-            // console.log(emailE);
-            // output.textContent = `이름:${nameE} 이메일:${emailE}`
-            output.innerHTML = `
-            <p><strong>이름: ${nameE}</strong></p>
-             <p><strong>이메일: ${emailE}</strong></p>`;
-        })
-        // 폼초기화 기능
-        form1.addEventListener("reset" ,function({
-            
-        }))
+      const form1 = document.querySelector("#myForm");
+      const output = document.querySelector("#output");
+      form1.addEventListener("submit", function (event) {
+        event.preventDefault(); //기본 제출 동작을 막음
+        // const nameE =document.querySelector("#name").value
+        const nameE = document.querySelector("#name");
+        const nameValue = nameE.value;
+        // console.log(nameValue);
+        const emailE = document.querySelector("#email").value;
+        // console.log(emailE);
+        output.innerHTML = `
+        <p><strong>이름: ${nameValue}</strong></p>
+         <p><strong>이메일: ${emailE}</strong></p>
+         `;
+      });
     </script>
-</body>
+  </body>
 </html>

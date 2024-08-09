@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>window 객체</title>
+  </head>
+  <body>
+    <button onclick="showAlert()">경고창 보기</button>
+    <button onclick="showConfirm()">확인창 보기</button>
+    <button onclick="showPrompt()">프롬프트 보기</button>
+    <script>
+      // 경고창 보기
+      function showAlert() {
+        window.alert(); // window는 생략해도 됨
+      }
+      // 확인창 보기
+      function showConfirm() {
+        const result = window.confirm("이 작업을 확인하시겠습니까?");
+        if (result) {
+          window.alert("작업이 확인되었습니다.");
+        } else {
+          window.alert("작업이 취소되었습니다.");
+        }
+      }
+    //   프롬프트 보기
+    function showPrompt(){
+        const name = window.prompt("이름이 무엇입니까?" , "")
+        if(name !== null ){
+            window.alert(`안녕하세요, ${name}님! `)
+        }else{
+            window.alert(`이름이 입력되지 않았습니다. `)
+        }
+    }
+    </script>
+  </body>
+</html>

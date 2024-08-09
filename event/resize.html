@@ -10,10 +10,10 @@
         height: 200px;
         background-color: aqua;
       }
-      .active {
+      .active{
         width: 100px;
         height: 100px;
-        background-color: rgb(30, 199, 25);
+        background-color: brown;
         border-radius: 50%;
       }
     </style>
@@ -23,31 +23,30 @@
     <div class="box"></div>
     <p>브라우저 창의 크기를 조정해주세요</p>
     <script>
-    //   window.addEventListener("resize", function () {
-    //     // 1. 박스를 변수에 담고
-    //     const box = document.querySelector(".box")
-    //     // 2. 박스에 클래스를 더한다
-    //     box.classList.add("colorchange");
-    //   });
+    //   window.addEventListener("resize",function(){
+    //     // 1.박스를 변수에 담고
+    //     const box =document.querySelector(".box")
+    //     // 2.박스에 클래스를 더한다.
+    //     box.classList.add("active")
+    //   })
+// function handleResize(){
+//    const box = document.querySelector(".box") 
+//    if(window.innerWidth < 1000){
+//     box.classList.add("active")
+//    }else{
+//     box.classList.remove("active")
+//    }
+// }
+// window.addEventListener("resize" , handleResize)
+window.addEventListener("resize" , function(){
+   const box = document.querySelector(".box") 
+   if(window.innerWidth < 1000){
+    box.classList.add("active")
+   }else{
+    box.classList.remove("active")
+   }
+})
 
-    // handleResize = 함수명, 함수 재사용
-    // function handleResize(){
-    //     const box = document.querySelector(".box")
-    //     if(window.innerWidth < 1500){
-    //         box.classList.add("active")
-    //     }else{
-    //         box.classList.remove("active")
-    //     }
-    // }
-    // window.addEventListener("resize" , handleResize)
-    window.addEventListener("resize" , function(){
-        const box = document.querySelector(".box")
-        if(window.innerWidth < 1000){
-            box.classList.add("active")
-        }else{
-            box.classList.remove("active")
-        }
-    })
     </script>
   </body>
 </html>
